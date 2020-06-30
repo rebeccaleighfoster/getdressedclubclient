@@ -47,7 +47,7 @@ const SubmitThemeForm = () => (
                 value={values.themename}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                placeholder="Demin"
+                placeholder="Plaid"
                 type="text"
                 name="themename"
                 id="themename"

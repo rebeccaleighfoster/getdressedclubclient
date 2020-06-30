@@ -38,25 +38,24 @@ export default class LandingPage extends React.Component {
             <h1> Get Dressed Club! </h1>
             <h2> Theme of the day is Denim!</h2>
             {/*randomly choose a theme to enter ^*/}
-           
-              <p>
-                {" "}
-                An app in inspired by a group text friends made during quaratine
-                called the "getting dressed club". Every day there was an outfit
-                theme and we would all match eachother and send selfies of our
-                matching outfits.
-              </p>
 
-              <p>
-                Instead of traditional social media apps that focus on the
-                exciting and notable parts of life, it was be an app that lets
-                you track you and your friends' basic self care routines. Every
-                day, users can log what they did to take care of themselves,
-                upload pictures of matching outfits and can offer or ask for a
-                helping hand if they are having trouble getting things done.
-              </p>
-              <Link to="/signup"> Get Started! </Link>
-            
+            <p>
+              {" "}
+              An app inspired by a group text friends made during quarantine
+              called the "getting dressed club". Every day there was an outfit
+              theme and we would all match each other and send selfies of our
+              matching outfits.
+            </p>
+
+            <p>
+              Instead of traditional social media apps that focus on the
+              exciting and notable parts of life, this is an app that lets you
+              track your friends' basic self-care routines. Every day, users can
+              log what they did to take care of themselves, upload pictures of
+              matching outfits and can offer or ask for a helping hand if they
+              are having trouble getting things done.
+            </p>
+            <Link to="/signup"> Get Started! </Link>
           </div>
         </section>
       </>
