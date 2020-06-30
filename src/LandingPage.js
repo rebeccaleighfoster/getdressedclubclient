@@ -38,7 +38,6 @@ export default class LandingPage extends React.Component {
             <h1> Get Dressed Club! </h1>
             <h2> Theme of the day is Denim!</h2>
             {/*randomly choose a theme to enter ^*/}
-
             <p>
               {" "}
               An app inspired by a group text friends made during quarantine
