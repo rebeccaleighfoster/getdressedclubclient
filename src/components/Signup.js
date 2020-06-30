@@ -9,23 +9,23 @@ const SignUpForm = () => (
   <div>
     <Formik
       initialValues={{
-        theme: "",
+        name: "",
       }}
          onSubmit={(values, { setSubmitting }) => {
-           console.log(values, "from submit theme");
-      //     fetch(`${URL}/friends`, {
-      //       method: "POST",
-      //       headers: {
-      //         "Content-Type": "application/json",
-      //       },
-      //       body: JSON.stringify(values),
-      //     })
-      //       .then((response) => response.json())
-      //       .then((data) => {
+           console.log(values, "from submit friends");
+          fetch(`http://localhost:4040/friends`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(values),
+          })
+            .then((response) => response.json())
+            .then((data) => {
               setSubmitting(false);
-               // window.location.href = "/loglist";
-             }}
-      //   }}
+            //    window.location.href = "/loglist";
+             });
+        }}
     >
       {(props) => {
         const {
@@ -44,21 +44,21 @@ const SignUpForm = () => (
               <label htmlFor="friendname">Name: </label>
               <input
                 required
-                value={values.friendname}
+                value={values.name}
                 onChange={handleChange}
                 onBlur={handleBlur}
                 placeholder="Enter Name"
                 type="text"
-                name="friendname"
-                id="friendname"
+                name="name"
+                id="name"
               />
-              <ErrorMessage name="friendname" />
+              <ErrorMessage name="name" />
             </div>
-            <Link to='./loglist'>
+            {/* <Link to='./loglist'> */}
             <button type="submit" disabled={isSubmitting}>
               Submit
             </button>
-            </Link>
+            {/* </Link> */}
           </form>
         );
       }}

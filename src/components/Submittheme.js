@@ -4,26 +4,28 @@ import Nav from './Nav'
 import * as Yup from "yup";
  import { URL } from "../config";
 import { Link } from 'react-router-dom'
+
 const SubmitThemeForm = () => (
   <div>
     <Formik
       initialValues={{
-        ThemeName: "",
+        themename: "",
       }}
       onSubmit={(values, { setSubmitting }) => {
         console.log(values, "from submit theme");
-        // fetch(`http://localhost:4040/themes`, {
-        //   method: "POST",
-        //   headers: {
-        //     "Content-Type": "application/json",
-        //   },
-        //   body: JSON.stringify(values),
-        // })
-        //   .then((response) => response.json())
-        //   .then((data) => {
+        fetch(`http://localhost:4040/themes`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(values),
+        })
+          .then((response) => response.json())
+          .then((data) => {
             setSubmitting(false);
-            // window.location.href = "/loglist";
-      }}
+            //  window.location.href = "/loglist";
+      });
+    }}
     >
       {(props) => {
         const {
@@ -39,24 +41,22 @@ const SubmitThemeForm = () => (
           <form onSubmit={handleSubmit} className="form">
             <div > Submit A Theme </div>
             <div>
-              <label htmlFor="ThemeName">Theme: </label>
+              <label htmlFor="themename">Theme: </label>
               <input
                 required
-                value={values.ThemeName}
+                value={values.themename}
                 onChange={handleChange}
                 onBlur={handleBlur}
                 placeholder="Demin"
                 type="text"
-                name="ThemeName"
-                id="ThemeName"
+                name="themename"
+                id="themename"
               />
               <ErrorMessage name="ThemeName" />
             </div>
-            <Link to='./loglist'>
             <button type="submit" disabled={isSubmitting}>
               Submit
             </button>
-            </Link>
           </form>
         );
       }}

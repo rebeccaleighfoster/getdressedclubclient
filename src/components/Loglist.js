@@ -1,83 +1,135 @@
 import React, { Component } from "react";
-import Nav from './Nav'
+import Nav from "./Nav";
+import Gravatar from "react-gravatar";
+import md5 from "md5";
 
 class Loglist extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//         dailylog: [],
-//     } 
-//   }
+  constructor(props) {
+    super(props);
+    this.state = {
+      dailylog: [],
+      logImages: []
+    };
+  }
+
+
+  handleLogDelete = (log_id) => {
+    fetch(`http://localhost:4040/dailylog/${log_id}`, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
+      },
+    })
+      .then((res) => {
+        if (res.ok) {
+          this.fetchLogs();
+        }
+      })
+      .catch((error) => {
+        console.error({ error });
+      });
+  };
 
   //get all logs
-//   fetchLogs = () => {
-//     fetch(`${URL}/dailylog`)
-//       .then((dailylogresponse) => {
-//         if (!dailylogresponse.ok)
-//           return dailylogresponse.json().then((e) => Promise.reject(e));
-//         return dailylogresponse.json();
-//       })
-//       .then((weavers) => {
-//         this.setState({
-//           dailylog,
-//         });
-//       })
-//       .catch((error) => {
-//         console.error({ error });
-//       });
-//   };
+  fetchLogs = () => {
+    fetch(`http://localhost:4040/dailylog`)
+      .then((dailylogresponse) => {
+        if (!dailylogresponse.ok)
+          return dailylogresponse.json().then((e) => Promise.reject(e));
+        return dailylogresponse.json();
+      })
+      .then((dailylog) => {
+        this.setState({
+          dailylog,
+        });
+      })
+      .catch((error) => {
+        console.error({ error });
+      });
+  };
 
+//fetchPic = () => {
+//     fetch(`http://localhost:4040/dailylog/${imagename}`)
+//     .then((dailypicresponse) => {
+//       if (!dailypicresponse.ok)
+//         return dailypicresponse.json().then((e) => Promise.reject(e));
+//       return dailypicresponse.json();
+//     })
+//     .then((dailypic) => {
+//       this.setState({
+//         dailypic,
+//       });
+//     })
+//     .catch((error) => {
+//       console.error({ error });
+//     });
+// };
+//}
+
+
+//   componentDidUpdate(prevProps) {
+//     if (
+//       this.props.match.params.log_id !== prevProps.match.params.log_id
+//     ) {
+//       this.fetchLogs();
+//     }
+//   }
+
+  componentDidMount() {
+    this.fetchLogs();
+  }
 
   render() {
-    return(
-        <>
+    
+    return (
+      <>
         <Nav />
-        <section>
-        {/* {this.state.dailylog.map((logs) => ( */}
-          <ul className="info">
-              <li> Name: Arielle Johnson </li>
-               <img
-                    src={require("./photos/download.jpg")}
-                    className="loom"
-                    alt="loom"
-                  ></img>
-              <li> Date: June 12th, 2020</li>
-              <li> How did you move your body today? Today I went on a run</li>
-              <li> I drank 8 glasses of water </li>
-              <li> Did you leave your house? Yes! </li>
-              <li> Win of the day? I am proud of myself for going on a run </li>
-              <li> Did you shower? Yes!</li>
-              <li> Did you clean your room? Yes! </li>
-              <li> Did you do your dishes? Yes! </li>
-              <li> Did you wash your face? Yes! </li>
-              <li> Do you need help, or can you provide help? </li>
-              <li> I can drop off food if someone needs it, I am free for a phone call or a virtual movie night</li>
+        {this.state.dailylog.map((log) => (
+          <ul key={log.log_id} className="info">
+            <li> Name: {log.friendname} </li>
+            {log.imagename ? <img
+              src={`${process.env.REACT_APP_DEV_URL}/${log.imagename}`}
+              className="loom"
+              alt="loom"
+            ></img> : <Gravatar md5={md5(log.log_id)} size={150} rating="pg" default="monsterid" className="CustomAvatar-image" />}
+            <li> Date:{log.date}</li>
+            <li> How did you move your body today? {log.movebody}</li>
+            <li> I drank {log.glasseswater} glasses of water </li>
+            {log.leavehouse === true ? (
+              <li> Did you leave your house? Yes </li>
+            ) : (
+              <li> Did you leave your house? No </li>
+            )}
+            <li> Win of the day? {log.winofday} </li>
+            {log.shower === true ? (
+              <li> Did you shower? Yes </li>
+            ) : (
+              <li> Did you shower? No </li>
+            )}
+            {log.cleanroom === true ? (
+              <li> Did you clean your house? Yes </li>
+            ) : (
+              <li> Did you clean your house? No </li>
+            )}
+            {log.dodishes === true ? (
+              <li> Did you do your dishes? Yes </li>
+            ) : (
+              <li> Did you do your dishes? No </li>
+            )}
+            {log.washface === true ? (
+              <li> Did you do your skincare routine? Yes </li>
+            ) : (
+              <li> Did you do your skincare routine? No </li>
+            )}
+            {log.call === true ? <li> I would like a call from a friend </li> : null }
+            <li> {log.fooddrop} </li>
+            <button onClick={() => this.handleLogDelete(log.log_id)}> Delete </button>
           </ul>
-          <ul className="info">
-              <li> Name: Kelsey Johnson </li>
-              <img
-                    src={require("./photos/download.jpg")}
-                    className="loom"
-                    alt="loom"
-                  ></img>
-              <li> Date: June 12th, 2020</li>
-              <li> How did you move your body today? Today I went on a walk around the lake</li>
-              <li> I drank 3 glasses of water </li>
-              <li> Did you leave your house? Yes! </li>
-              <li> Win of the day? I am proud of myself for not getting frustrated with my coworker </li>
-              <li> Did you shower? Yes!</li>
-              <li> Did you clean your room? No </li>
-              <li> Did you do your dishes? Yes! </li>
-              <li> Did you wash your face? Yes! </li>
-              <li> Do you need help, or can you provide help? </li>
-              <li> I would like if someone could drop off food for me, I am free for a phone call or a virtual movie night</li>
-          </ul>
-        {/* ))} */}
-      </section>
+        ))}
       </>
-    )
+    );
   }
 }
 
-
+///{log.distacewalk === true ? <li> yes </li> : <li> no </li> }
 export default Loglist;

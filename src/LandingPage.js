@@ -36,7 +36,7 @@ export default class LandingPage extends React.Component {
         <section>
           <div className="info">
             <h1> Get Dressed Club! </h1>
-            <h2> Theme of the day is Demin!</h2>
+            <h2> Theme of the day is Denim!</h2>
             {/*randomly choose a theme to enter ^*/}
            
               <p>
