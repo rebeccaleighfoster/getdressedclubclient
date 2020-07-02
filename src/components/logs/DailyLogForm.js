@@ -216,11 +216,12 @@ formData.append('file', e.target.files[0])
                 />
               </div>
               <div>
-                <label>Did you shower</label>
+                <label>Did you shower? </label>
                 <label htmlFor="shower-yes">Yes</label>
                 <input
                   required
-                  value={true}
+                  value={"yes"}
+                  checked={values.shower === "yes"}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder="Yes"
@@ -231,7 +232,8 @@ formData.append('file', e.target.files[0])
                 <label htmlFor="shower-no">No</label>
                 <input
                   required
-                  value={false}
+                  value={"no"}
+                  checked={values.shower === "no"}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder="No"
@@ -245,7 +247,8 @@ formData.append('file', e.target.files[0])
                 <label htmlFor="cleanroom-yes">Yes</label>
                 <input
                   required
-                  value={true}
+                  value={"yes"}
+                  checked={values.cleanroom === "yes"}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder="Yes"
@@ -256,7 +259,8 @@ formData.append('file', e.target.files[0])
                 <label htmlFor="cleanroom-no">No</label>
                 <input
                   required
-                  value={false}
+                  value={"no"}
+                  checked={values.cleanroom === "no"}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder="No"
@@ -270,7 +274,8 @@ formData.append('file', e.target.files[0])
                 <label htmlFor="dodishes-yes">Yes</label>
                 <input
                   required
-                  value={true}
+                  value={"yes"}
+                  checked={values.dodishes === "yes"}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder="Yes"
@@ -281,7 +286,8 @@ formData.append('file', e.target.files[0])
                 <label htmlFor="dodishes-no">No</label>
                 <input
                   required
-                  value={false}
+                  value={"no"}
+                  checked={values.dodishes === "no"}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder="No"
@@ -295,7 +301,8 @@ formData.append('file', e.target.files[0])
                 <label htmlFor="washface-yes">Yes</label>
                 <input
                   required
-                  value={true}
+                  value={"yes"}
+                  checked={values.washface === "yes"}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder="Yes"
@@ -306,7 +313,8 @@ formData.append('file', e.target.files[0])
                 <label htmlFor="washface-no">No</label>
                 <input
                   required
-                  value={false}
+                  value={"no"}
+                  checked={values.washface === "no"}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder="No"
@@ -340,7 +348,8 @@ formData.append('file', e.target.files[0])
                   I would like a phone call with a friend{" "}
                 </label>
                 <input
-                  value={true}
+                  value={"yes"}
+                  checked={values.call === "yes"}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder="Yes"
@@ -351,17 +360,16 @@ formData.append('file', e.target.files[0])
                 <br></br>
               </div>
               <div>
-                <label> Distant Walk</label>
+                <label> Hang Out </label>
                 <br></br>
                 <label htmlFor="distacewalk-yes">
-                  I would like to hang out with someone for a distant
-                  walk{" "}
+                  I am free to hang out with someone{" "}
                 </label>
                 <input
-                  value={true}
+                  value={"yes"}
+                  checked={values.distancewalk === "yes"}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  placeholder="Yes"
                   type="radio"
                   name="distancewalk"
                   id="distancewalk-yes"

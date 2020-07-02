@@ -17,13 +17,13 @@ export default class Nav extends React.Component {
               <Link to="/Loglist"> Track Your Friends</Link>
             </li>
             <li>
-              <Link to="/Submittheme"> Submit a Theme</Link>
+              <Link to="/Submittheme"> Submit an Outfit Theme</Link>
             </li>
             <li>
-              <Link to="/Signup"> Sign Up </Link>
+              <Link to="/Signup"> Get Started </Link>
             </li>
             <li>
-              <Link to="/Addlog"> Add a Daily Entry
+              <Link to="/Addlog"> Add a Daily Log
                </Link>
             </li>
           </ul>

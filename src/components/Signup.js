@@ -1,6 +1,8 @@
 import React from "react";
 import { Formik, ErrorMessage } from "formik";
 import Nav from "./Nav";
+import * as Yup from "yup";
+import { Link } from "react-router-dom";
 // import { URL } from "../../config";
 
 const SignUpForm = () => (
@@ -9,21 +11,21 @@ const SignUpForm = () => (
       initialValues={{
         name: "",
       }}
-         onSubmit={(values, { setSubmitting }) => {
-           console.log(values, "from submit friends");
-          fetch(`http://localhost:4040/friends`, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(values),
-          })
-            .then((response) => response.json())
-            .then((data) => {
-              setSubmitting(false);
+      onSubmit={(values, { setSubmitting }) => {
+        console.log(values, "from submit friends");
+        fetch(`http://localhost:4040/friends`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(values),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            setSubmitting(false);
             //    window.location.href = "/loglist";
-             });
-        }}
+          });
+      }}
     >
       {(props) => {
         const {
@@ -37,7 +39,7 @@ const SignUpForm = () => (
         } = props;
         return (
           <form onSubmit={handleSubmit} className="form">
-            <div> Sign Up </div>
+            <div> Get Started </div>
             <div>
               <label htmlFor="friendname">Name: </label>
               <input

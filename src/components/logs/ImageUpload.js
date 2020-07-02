@@ -1,5 +1,6 @@
 import React from "react";
-
+import { Link } from 'react-router-dom';
+ 
 class ImageUpload extends React.Component {
   uploadDailyLogImage = (e) => {
     console.log(e.target.files);
@@ -9,7 +10,6 @@ class ImageUpload extends React.Component {
     formData.append("file", e.target.files[0]);
     fetch(`http://localhost:4040/dailylog/image/upload/${log_id}`, {
       method: "POST",
-
       body: formData,
     })
       .then((response) => response.json())
@@ -29,6 +29,8 @@ class ImageUpload extends React.Component {
           onChange={this.uploadDailyLogImage}
           accept="image/x-png,image/gif,image/jpeg"
         />
+        <Link to='/loglist'>Submit Photo</Link>
+        <Link to='/loglist'>Skip Today's Photo </Link>
       </div>
     );
   }

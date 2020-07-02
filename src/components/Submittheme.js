@@ -20,7 +20,7 @@ const SubmitThemeForm = () => (
           .then((response) => response.json())
           .then((data) => {
             setSubmitting(false);
-            //  window.location.href = "/loglist";
+            window.location.href = "/Addlog";
       });
     }}
     >

@@ -55,6 +55,7 @@ class Loglist extends Component {
   }
 
   render() { 
+    console.log(this.state.dailylog)
      return (
       <>
         <Nav />
@@ -68,33 +69,33 @@ class Loglist extends Component {
             <li> Date: {format(parseISO(log.date), 'MMMM dd, yyyy')}</li>
             <li> How did you move your body today? {log.movebody}</li>
             <li> I drank {log.glasseswater} glasses of water </li>
-            {log.leavehouse === true ? (
+            {log.leavehouse === "yes" ? (
               <li> Did you leave your house? Yes </li>
             ) : (
               <li> Did you leave your house? No </li>
             )}
             <li> Win of the day? {log.winofday} </li>
-            {log.shower === true ? (
+            {log.shower === "yes" ? (
               <li> Did you shower? Yes </li>
             ) : (
               <li> Did you shower? No </li>
             )}
-            {log.cleanroom === true ? (
+            {log.cleanroom === "yes" ? (
               <li> Did you clean your house? Yes </li>
             ) : (
               <li> Did you clean your house? No </li>
             )}
-            {log.dodishes === true ? (
+            {log.dodishes === "yes" ? (
               <li> Did you do your dishes? Yes </li>
             ) : (
               <li> Did you do your dishes? No </li>
             )}
-            {log.washface === true ? (
+            {log.washface === "yes" ? (
               <li> Did you do your skincare routine? Yes </li>
             ) : (
               <li> Did you do your skincare routine? No </li>
             )}
-            {log.call === true ? <li> I would like a call from a friend </li> : null }
+            {log.call === "yes" ? <li> I would like a call from a friend </li> : null }
             <li> {log.fooddrop} </li>
             <button>
               <Link to={`/EditLog/${log.log_id}`}> Edit </Link>
