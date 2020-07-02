@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import Nav from "./Nav";
+import Nav from "../Nav";
 import Gravatar from "react-gravatar";
 import md5 from "md5";
+import { Link } from 'react-router-dom'
+import { format, parseISO } from 'date-fns';
 
 class Loglist extends Component {
   constructor(props) {
@@ -46,42 +48,14 @@ class Loglist extends Component {
       .catch((error) => {
         console.error({ error });
       });
-  };
-
-//fetchPic = () => {
-//     fetch(`http://localhost:4040/dailylog/${imagename}`)
-//     .then((dailypicresponse) => {
-//       if (!dailypicresponse.ok)
-//         return dailypicresponse.json().then((e) => Promise.reject(e));
-//       return dailypicresponse.json();
-//     })
-//     .then((dailypic) => {
-//       this.setState({
-//         dailypic,
-//       });
-//     })
-//     .catch((error) => {
-//       console.error({ error });
-//     });
-// };
-//}
-
-
-//   componentDidUpdate(prevProps) {
-//     if (
-//       this.props.match.params.log_id !== prevProps.match.params.log_id
-//     ) {
-//       this.fetchLogs();
-//     }
-//   }
+    };
 
   componentDidMount() {
     this.fetchLogs();
   }
 
-  render() {
-    
-    return (
+  render() { 
+     return (
       <>
         <Nav />
         {this.state.dailylog.map((log) => (
@@ -89,10 +63,9 @@ class Loglist extends Component {
             <li> Name: {log.friendname} </li>
             {log.imagename ? <img
               src={`${process.env.REACT_APP_DEV_URL}/${log.imagename}`}
-              className="loom"
-              alt="loom"
+              className="PicOfDay"
             ></img> : <Gravatar md5={md5(log.log_id)} size={150} rating="pg" default="monsterid" className="CustomAvatar-image" />}
-            <li> Date:{log.date}</li>
+            <li> Date: {format(parseISO(log.date), 'MMMM dd, yyyy')}</li>
             <li> How did you move your body today? {log.movebody}</li>
             <li> I drank {log.glasseswater} glasses of water </li>
             {log.leavehouse === true ? (
@@ -123,6 +96,9 @@ class Loglist extends Component {
             )}
             {log.call === true ? <li> I would like a call from a friend </li> : null }
             <li> {log.fooddrop} </li>
+            <button>
+              <Link to={`/EditLog/${log.log_id}`}> Edit </Link>
+            </button>
             <button onClick={() => this.handleLogDelete(log.log_id)}> Delete </button>
           </ul>
         ))}
@@ -131,5 +107,4 @@ class Loglist extends Component {
   }
 }
 
-///{log.distacewalk === true ? <li> yes </li> : <li> no </li> }
 export default Loglist;

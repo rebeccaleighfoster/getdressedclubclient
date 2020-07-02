@@ -1,12 +1,47 @@
 import React from "react";
-import { Formik, ErrorMessage } from "formik";
+import { Formik, ErrorMessage, validateYupSchema } from "formik";
 import * as Yup from "yup";
 // import { URL } from "../../config";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import Nav from "./Nav";
+import Nav from "../Nav";
 import { Link } from "react-router-dom";
 import { Component } from "react";
+
+function addLog(values, setSubmitting){
+  console.log(values, "from submit dailylog");
+  fetch(`http://localhost:4040/dailylog`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(values),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+        console.log(data)
+        setSubmitting(false);
+        window.location.href = `/Addlog/upload/${data.log_id}`;
+    });
+}
+
+const editLog = (values, setSubmitting) => {
+const id = values.log_id;
+delete values.log_id;
+fetch(`http://localhost:4040/dailylog/edit/${id}`, {
+  method: "PATCH",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(values),
+})
+  .then((response) => response.json())
+  .then((data) => {
+    console.log("from edit logs", data);
+    setSubmitting(false);
+    window.location.href = "/loglist";
+  });
+};
 
 class Dailylog extends Component {
   constructor(props) {
@@ -51,6 +86,7 @@ formData.append('file', e.target.files[0])
   componentDidMount() {
     this.getName();
   }
+
   render() {
     const nameslist = this.state.names;
     const names = nameslist.map((data) => (
@@ -59,40 +95,20 @@ formData.append('file', e.target.files[0])
       </option> ));
     return (
         <>
-        <Nav />
       <Formik
-        initialValues={{
-          call: false,
-          cleanroom: false,
-          dodishes: false,
-          fooddrop: false,
-          friendname: "",
-          glasseswater: "",
-          leavehouse: "",
-          movebody: "",
-          shower: "",
-          washface: "",
-          winofday: "",
-          date: new Date(),
-        }}
+        enableReinitialize
+        initialValues={this.props.log || {}}
         onSubmit={(values, { setSubmitting }) => {
-          console.log(values, "from submit dailylog");
-          fetch(`http://localhost:4040/dailylog`, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(values),
-          })
-            .then((response) => response.json())
-            .then((data) => {
-                console.log(data)
-              setSubmitting(false);
-              window.location.href = `/Addlog/upload/${data.log_id}`;
-            });
+          console.log("on submit", values);
+          if (values.log_id) {
+            editLog(values,setSubmitting)
+          } else {
+            addLog(values, setSubmitting)
+          }
         }}
+        
       >
-        {(props) => {
+        {(formProps) => {
           const {
             values,
             dirty,
@@ -102,7 +118,7 @@ formData.append('file', e.target.files[0])
             handleSubmit,
             handleReset,
             setFieldValue,
-          } = props;
+          } = formProps;
           return (
             <form onSubmit={handleSubmit} className="form">
               <div> Add today's activity </div>
@@ -164,7 +180,8 @@ formData.append('file', e.target.files[0])
                 <label htmlFor="leavehouse-yes">Yes</label>
                 <input
                   required
-                  value={true}
+                  value={"yes"}
+                  checked={values.leavehouse === "yes"}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder="Yes"
@@ -175,7 +192,8 @@ formData.append('file', e.target.files[0])
                 <label htmlFor="leavehouse-no">No</label>
                 <input
                   required
-                  value={false}
+                  value={"no"}
+                  checked={values.leavehouse === "no"}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder="No"
@@ -333,10 +351,10 @@ formData.append('file', e.target.files[0])
                 <br></br>
               </div>
               <div>
-                <label>Socailly Distant Walk</label>
+                <label> Distant Walk</label>
                 <br></br>
                 <label htmlFor="distacewalk-yes">
-                  I would like to hang out with someone for a social distant
+                  I would like to hang out with someone for a distant
                   walk{" "}
                 </label>
                 <input
@@ -357,15 +375,6 @@ formData.append('file', e.target.files[0])
           );
         }}
       </Formik>
-      <div>
-        <label htmlFor="image"> Upload your outfit: </label>
-        <input
-            type="file"
-            name="image"
-            onChange={this.uploadDailyLogImage}
-            accept="image/x-png,image/gif,image/jpeg"
-        />
-        </div>
       </>
     );
   }

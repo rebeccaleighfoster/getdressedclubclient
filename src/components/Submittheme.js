@@ -1,9 +1,6 @@
 import React from "react";
 import { Formik, ErrorMessage } from "formik";
 import Nav from './Nav'
-import * as Yup from "yup";
- import { URL } from "../config";
-import { Link } from 'react-router-dom'
 
 const SubmitThemeForm = () => (
   <div>

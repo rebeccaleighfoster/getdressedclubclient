@@ -1,8 +1,6 @@
 import React from "react";
 import { Formik, ErrorMessage } from "formik";
 import Nav from "./Nav";
-import * as Yup from "yup";
-import { Link } from 'react-router-dom'
 // import { URL } from "../../config";
 
 const SignUpForm = () => (
