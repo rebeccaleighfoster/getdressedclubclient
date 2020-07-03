@@ -115,13 +115,25 @@ input[type=text]{
   margin: 8px 0;
 }
 
+.date{
+display: inline;
+}
+
+
 .radiobutton{
   width: 100%;
+}
+
+.buttonquestion{
+  line-height: 25px;
+  padding-bottom: 5px;
 }
 
 .logList li {
   list-style-type: none;
   padding: 2px;
+  line-height: 25px;
+  padding: 5px;
 }
 
 .logListContainer {

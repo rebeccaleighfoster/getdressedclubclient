@@ -137,14 +137,14 @@ class Dailylog extends Component {
                 </div>
                 <div>
                   <label htmlFor="date"> Date: </label>
+                 <div className="date">
                   <DatePicker
                     selected={values.date}
                     dateFormat="MMMM d, yyyy"
-                    className="form-control"
                     name="date"
-                    className="date"
                     onChange={(date) => setFieldValue("date", date)}
                   />
+                 </div>
                 </div>
                 <div>
                   <label htmlFor="friendname">
@@ -176,7 +176,7 @@ class Dailylog extends Component {
                     id="glasseswater"
                   />
                 </div>
-                <div>
+                <div className="buttonquestion">
                   <label>Did you leave the house?</label>
                   <div className="radioButton">
                     <label htmlFor="leavehouse-yes">Yes</label>
@@ -220,7 +220,7 @@ class Dailylog extends Component {
                     id="winofday"
                   />
                 </div>
-                <div>
+                <div className="buttonquestion">
                   <label>Did you shower? </label>
                   <div className="radiobutton">
                     <label htmlFor="shower-yes">Yes</label>
@@ -249,7 +249,7 @@ class Dailylog extends Component {
                     />
                   </div>
                 </div>
-                <div>
+                <div className="buttonquestion">
                   <label>Did you clean your room?</label>
                   <div className="radiobutton">
                     <label htmlFor="cleanroom-yes">Yes</label>
@@ -278,7 +278,7 @@ class Dailylog extends Component {
                     />
                   </div>
                 </div>
-                <div>
+                <div className="buttonquestion">
                   <label>Did you do the dishes?</label>
                   <div className="radiobutton">
                   <label htmlFor="dodishes-yes">Yes</label>
@@ -307,7 +307,7 @@ class Dailylog extends Component {
                   />
                 </div>
                 </div>
-                <div>
+                <div className="buttonquestion">
                   <label>Did you do your skincare routine?</label>
                   <div className="radiobutton">
                   <label htmlFor="washface-yes">Yes</label>
@@ -350,20 +350,20 @@ class Dailylog extends Component {
                     <option>Select</option>
                     <option value="I am in need of someone to drop off food for me.">
                       {" "}
-                      I am in need of someone to drop off food for me.{" "}
+                      I am in need of someone to drop off food for me{" "}
                     </option>
                     <option value=" Reach out to me if you you need someone to drop food off for me.">
                       {" "}
                       Reach out to me if you you need someone to drop food off
-                      for me.{" "}
+                      for me{" "}
                     </option>
                   </select>
                 </div>
-                <div>
+                <div className="buttonquestion">
                   <label>Phone Call</label>
                   <br></br>
                   <label htmlFor="call-yes">
-                    I would like a phone call with a friend.{" "}
+                    I would like a phone call with a friend{" "}
                   </label>
                   <input
                     value={"yes"}
@@ -377,7 +377,7 @@ class Dailylog extends Component {
                   />
                   <br></br>
                 </div>
-                <div>
+                <div className="buttonquestion">
                   <label> Hang Out </label>
                   <br></br>
                   <label htmlFor="distacewalk-yes">
