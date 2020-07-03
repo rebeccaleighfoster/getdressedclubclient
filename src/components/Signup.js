@@ -1,9 +1,7 @@
 import React from "react";
 import { Formik, ErrorMessage } from "formik";
 import Nav from "./Nav";
-import * as Yup from "yup";
-import { Link } from "react-router-dom";
-// import { URL } from "../../config";
+ import { URL } from "../config";
 import Particles from './Particles'
 
 const SignUpForm = () => (
@@ -13,8 +11,7 @@ const SignUpForm = () => (
         name: "",
       }}
       onSubmit={(values, { setSubmitting }) => {
-        console.log(values, "from submit friends");
-        fetch(`http://localhost:4040/friends`, {
+        fetch(`${ URL }/friends`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -31,7 +28,6 @@ const SignUpForm = () => (
       {(props) => {
         const {
           values,
-          dirty,
           isSubmitting,
           handleChange,
           handleBlur,

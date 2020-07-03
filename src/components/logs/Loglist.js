@@ -5,6 +5,7 @@ import md5 from "md5";
 import { Link } from "react-router-dom";
 import { format, parseISO } from "date-fns";
 import Particles from "../Particles";
+import { URL } from '../../config'
 
 class Loglist extends Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class Loglist extends Component {
   }
 
   handleLogDelete = (log_id) => {
-    fetch(`http://localhost:4040/dailylog/${log_id}`, {
+    fetch(`${ URL }/dailylog/${log_id}`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json",
@@ -34,7 +35,7 @@ class Loglist extends Component {
 
   //get all logs
   fetchLogs = () => {
-    fetch(`http://localhost:4040/dailylog`)
+    fetch(`${ URL }/dailylog`)
       .then((dailylogresponse) => {
         if (!dailylogresponse.ok)
           return dailylogresponse.json().then((e) => Promise.reject(e));
@@ -73,7 +74,7 @@ class Loglist extends Component {
                 size={150}
                 rating="pg"
                 default="monsterid"
-                className="CustomAvatar-image"
+                className="PicOfDay"
               />
             )}
             <li> Name: {log.friendname} </li>

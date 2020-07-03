@@ -1,7 +1,7 @@
 import React from "react";
 import Nav from "../Nav"
 import DailyLogForm from "./DailyLogForm";
-//import { URL } from "../../config";
+import { URL } from "../../config";
 
 class EditLog extends React.Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class EditLog extends React.Component {
   //get only one log
   fetchLogsByLog_Id = () => {
     const { log_id } = this.props.match.params;
-    fetch(`http://localhost:4040/dailylog/${log_id}`) 
+    fetch(`${ URL }/dailylog/${log_id}`) 
       .then((resp) => {
         if (!resp.ok) return resp.json().then((e) => Promise.reject(e));
         return resp.json();

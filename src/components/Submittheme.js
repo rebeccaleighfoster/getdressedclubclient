@@ -2,6 +2,7 @@ import React from "react";
 import { Formik, ErrorMessage } from "formik";
 import Nav from './Nav'
 import Particles from "./Particles";
+import { URL } from '../config'
 
 const SubmitThemeForm = () => (
   <div>
@@ -10,8 +11,7 @@ const SubmitThemeForm = () => (
         themename: "",
       }}
       onSubmit={(values, { setSubmitting }) => {
-        console.log(values, "from submit theme");
-        fetch(`http://localhost:4040/themes`, {
+        fetch(`${ URL }/themes`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

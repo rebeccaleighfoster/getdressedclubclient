@@ -6,9 +6,12 @@ import Particles from "../Particles";
 function AddNewLog() {
   return (
     <>
-      <Particles />
       <Nav />
+      
+
       <DailyLogForm />
+      
+      {/* <Particles /> */}
     </>
   );
 }

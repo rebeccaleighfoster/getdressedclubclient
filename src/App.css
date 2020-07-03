@@ -1,8 +1,9 @@
 * {
   box-sizing: border-box;
+  font-family: Tahoma, sans-serif;
 }
 
-body{
+body {
   background-color: #e2e2e2;
 }
 
@@ -20,108 +21,138 @@ body{
   padding: 0;
 }
 
-.LogForm{
-  margin: 15px;
+.LogForm {
+  margin: 60px auto auto auto;
   padding: 15px;
-  background-color:#808080;
-  width: 75%;
+  background-color: #808080;
+  width: 95%;
   padding: 20px;
-  position: fixed;
   top: 50%;
-  left: 50%; 
-  transform: translate(-50%, -50%);
+  left: 50%;
   border-style: solid;
-  border-radius: 3vw;
+  border-radius: 3px;
 }
 
-.nav li:hover{
+.nav a:hover {
   background-color: #e2e2e2;
 }
 
-.nav li{
+.nav a {
   float: left;
   display: block;
   padding: 14px;
   text-decoration: none;
   height: inherit;
+  color: black;
 }
 
-button{
+button {
+  color: #808080;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #ffffff;
+  padding: 10px;
+  border: 1px solid black;
   display: inline-block;
-  padding: 0.3em 1.2em;
-  margin: 0 0.3em 0.3em 0; 
-  border-radius: 2em;
-  text-align:center;
-  transition: all 0.2s;
+  transition: all 0.4s ease 0s;
 }
 
-button:hover{
+button:hover {
   background-color: #e2e2e2;
 }
-.info{
+.info {
   margin: 15px;
   text-align: center;
   padding: 15px;
-  background-color:#808080;
-  width: 50%;
-  padding: 20px;
-  position: fixed;
-  top: 50%;
-  left: 50%; 
-  border-style: solid;
-  border-radius: 3vw;
-  transform: translate(-50%, -50%);
-}
-
-
-.form {
-  margin: 15px;
-  padding: 15px;
-  background-color:#808080;
-  width: 50%;
-  padding: 20px;
-  position: fixed;
-  top: 50%;
-  left: 50%; 
-  transform: translate(-50%, -50%);
-  border-style: solid;
-  border-radius: 3vw;
-  text-align: center;
-}
-
-
-.logList li{
-  list-style-type: none;
-  padding: 2px;
-}
-
-.logListContainer{
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
-}
-
-.logList{
-  background-color: gray;
-  margin: 10vw 5vw 5vw 5vw;
-  padding: 5vw;
-  border-style: solid;
-  border-radius: 3vw;
-}
-
-.landing{
   background-color: #808080;
   width: 50%;
   padding: 20px;
   position: fixed;
   top: 50%;
-  left: 50%; 
+  left: 50%;
+  border-style: solid;
+  border-radius: 3px;
+  transform: translate(-50%, -50%);
+}
+
+.form {
+  margin: 15px;
+  padding: 15px;
+  background-color: #808080;
+  width: 75%;
+  padding: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-style: solid;
+  border-radius: 3px;
+  text-align: center;
+
+}
+
+input[type=text]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+}
+
+#friendname{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+}
+
+#glasseswater{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+}
+
+#fooddrop{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+}
+
+.radiobutton{
+  width: 100%;
+}
+
+.logList li {
+  list-style-type: none;
+  padding: 2px;
+}
+
+.logListContainer {
+  max-width: 1200px;
+  margin: 0;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.logList {
+  background-color: #808080;
+  margin: 60px 5px 0px 5px;
+  padding: 2vw;
+  border-style: solid;
+  border-radius: 3px;
+}
+
+.landing {
+  background-color: #808080;
+  width: 50%;
+  padding: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
 
 .PicOfDay {
-  width: 20vw;
+  max-width: 60%;
+  border-style: solid;
+  border-radius: 5px;
 }

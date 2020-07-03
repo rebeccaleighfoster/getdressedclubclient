@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Nav from "./Nav";
 import Particles from "./Particles";
-
+import { URL } from '../config'
+ 
 class GetTheme extends Component {
   constructor(props) {
     super(props);
@@ -12,7 +13,7 @@ class GetTheme extends Component {
   }
 
   fetchTheme = () => {
-    fetch("http://localhost:4040/themes")
+    fetch(`${ URL }/themes`)
       .then((themeresponse) => {
         if (!themeresponse.ok)
           return themeresponse.json().then((e) => Promise.reject(e));
