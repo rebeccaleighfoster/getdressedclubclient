@@ -5,7 +5,7 @@ import { URL } from "./config";
 import Particles from './components/Particles'
 export default class LandingPage extends React.Component {
   render() {
-    console.log {URL}
+    console.log (URL)
     return (
       <>
       <Particles />
