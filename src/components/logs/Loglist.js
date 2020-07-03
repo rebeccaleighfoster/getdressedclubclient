@@ -17,7 +17,7 @@ class Loglist extends Component {
   }
 
   handleLogDelete = (log_id) => {
-    fetch(`${ URL }/dailylog/${log_id}`, {
+    fetch(`${URL}/dailylog/${log_id}`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json",
@@ -35,7 +35,7 @@ class Loglist extends Component {
 
   //get all logs
   fetchLogs = () => {
-    fetch(`${ URL }/dailylog`)
+    fetch(`${URL}/dailylog`)
       .then((dailylogresponse) => {
         if (!dailylogresponse.ok)
           return dailylogresponse.json().then((e) => Promise.reject(e));

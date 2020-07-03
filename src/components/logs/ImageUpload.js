@@ -11,7 +11,7 @@ class ImageUpload extends React.Component {
     const { log_id } = this.props.match.params;
     formData.set("enctype", "multipart/form-data");
     formData.append("file", e.target.files[0]);
-    fetch(`${ URL }/dailylog/image/upload/${log_id}`, {
+    fetch(`${URL}/dailylog/image/upload/${log_id}`, {
       method: "POST",
       body: formData,
     })

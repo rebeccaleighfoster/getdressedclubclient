@@ -14,7 +14,7 @@ class EditLog extends React.Component {
   //get only one log
   fetchLogsByLog_Id = () => {
     const { log_id } = this.props.match.params;
-    fetch(`${ URL }/dailylog/${log_id}`) 
+    fetch(`${URL}/dailylog/${log_id}`) 
       .then((resp) => {
         if (!resp.ok) return resp.json().then((e) => Promise.reject(e));
         return resp.json();

@@ -11,7 +11,7 @@ const SignUpForm = () => (
         name: "",
       }}
       onSubmit={(values, { setSubmitting }) => {
-        fetch(`${ URL }/friends`, {
+        fetch(`${URL}/friends`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

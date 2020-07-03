@@ -11,7 +11,7 @@ const SubmitThemeForm = () => (
         themename: "",
       }}
       onSubmit={(values, { setSubmitting }) => {
-        fetch(`${ URL }/themes`, {
+        fetch(`${URL}/themes`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

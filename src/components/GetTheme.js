@@ -13,7 +13,7 @@ class GetTheme extends Component {
   }
 
   fetchTheme = () => {
-    fetch(`${ URL }/themes`)
+    fetch(`${URL}/themes`)
       .then((themeresponse) => {
         if (!themeresponse.ok)
           return themeresponse.json().then((e) => Promise.reject(e));
