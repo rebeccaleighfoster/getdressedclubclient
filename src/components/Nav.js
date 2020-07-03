@@ -14,13 +14,16 @@ export default class Nav extends React.Component {
           <div className="nav">
             <ul>
             <li>
+              <Link to="/Signup"> Sign Up </Link>
+            </li>
+            <li>
               <Link to="/Loglist"> Track Your Friends</Link>
             </li>
             <li>
               <Link to="/Submittheme"> Submit an Outfit Theme</Link>
             </li>
             <li>
-              <Link to="/Signup"> Get Started </Link>
+              <Link to='/GetTheme'> Get Outfit Theme </Link>
             </li>
             <li>
               <Link to="/Addlog"> Add a Daily Log

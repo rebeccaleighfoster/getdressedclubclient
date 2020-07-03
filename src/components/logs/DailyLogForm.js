@@ -120,8 +120,8 @@ formData.append('file', e.target.files[0])
             setFieldValue,
           } = formProps;
           return (
-            <form onSubmit={handleSubmit} className="form">
-              <div> Add today's activity </div>
+            <form onSubmit={handleSubmit} className="LogForm">
+              <h3> Add today's activity </h3>
               <div>
                 <label htmlFor="friendname">Name: </label>
                 <select

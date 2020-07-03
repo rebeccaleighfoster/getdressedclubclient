@@ -4,6 +4,7 @@ import Nav from "./Nav";
 import * as Yup from "yup";
 import { Link } from "react-router-dom";
 // import { URL } from "../../config";
+import Particles from './Particles'
 
 const SignUpForm = () => (
   <div>
@@ -23,7 +24,7 @@ const SignUpForm = () => (
           .then((response) => response.json())
           .then((data) => {
             setSubmitting(false);
-            //    window.location.href = "/loglist";
+           window.location.href = "/loglist";
           });
       }}
     >
@@ -39,9 +40,9 @@ const SignUpForm = () => (
         } = props;
         return (
           <form onSubmit={handleSubmit} className="form">
-            <div> Get Started </div>
-            <div>
-              <label htmlFor="friendname">Name: </label>
+            <h1> Get Started </h1>
+            <h3>
+              <label htmlFor="friendname">Name:  </label>
               <input
                 required
                 value={values.name}
@@ -53,12 +54,11 @@ const SignUpForm = () => (
                 id="name"
               />
               <ErrorMessage name="name" />
-            </div>
-            {/* <Link to='./loglist'> */}
+            </h3>
+            <br></br>
             <button type="submit" disabled={isSubmitting}>
               Submit
             </button>
-            {/* </Link> */}
           </form>
         );
       }}
@@ -68,6 +68,7 @@ const SignUpForm = () => (
 function SignUp() {
   return (
     <>
+     <Particles />
       <Nav />
       <SignUpForm />
     </>

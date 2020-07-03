@@ -1,14 +1,127 @@
-.nav{
-  background-color: bisque;
+* {
+  box-sizing: border-box;
 }
 
-.info, .form{
+body{
+  background-color: #e2e2e2;
+}
+
+.nav {
+  background-color: gray;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-style: solid;
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.LogForm{
+  margin: 15px;
+  padding: 15px;
+  background-color:#808080;
+  width: 75%;
+  padding: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  border-style: solid;
+  border-radius: 3vw;
+}
+
+.nav li:hover{
+  background-color: #e2e2e2;
+}
+
+.nav li{
+  float: left;
+  display: block;
+  padding: 14px;
+  text-decoration: none;
+  height: inherit;
+}
+
+button{
+  display: inline-block;
+  padding: 0.3em 1.2em;
+  margin: 0 0.3em 0.3em 0; 
+  border-radius: 2em;
+  text-align:center;
+  transition: all 0.2s;
+}
+
+button:hover{
+  background-color: #e2e2e2;
+}
+.info{
   margin: 15px;
   text-align: center;
   padding: 15px;
-  background-color: pink;
+  background-color:#808080;
+  width: 50%;
+  padding: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%; 
+  border-style: solid;
+  border-radius: 3vw;
+  transform: translate(-50%, -50%);
 }
 
-.PicOfDay{
-  width: 35vw;
+
+.form {
+  margin: 15px;
+  padding: 15px;
+  background-color:#808080;
+  width: 50%;
+  padding: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  border-style: solid;
+  border-radius: 3vw;
+  text-align: center;
+}
+
+
+.logList li{
+  list-style-type: none;
+  padding: 2px;
+}
+
+.logListContainer{
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+}
+
+.logList{
+  background-color: gray;
+  margin: 10vw 5vw 5vw 5vw;
+  padding: 5vw;
+  border-style: solid;
+  border-radius: 3vw;
+}
+
+.landing{
+  background-color: #808080;
+  width: 50%;
+  padding: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.PicOfDay {
+  width: 20vw;
 }

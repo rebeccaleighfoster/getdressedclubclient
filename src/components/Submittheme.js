@@ -1,6 +1,7 @@
 import React from "react";
 import { Formik, ErrorMessage } from "formik";
 import Nav from './Nav'
+import Particles from "./Particles";
 
 const SubmitThemeForm = () => (
   <div>
@@ -20,7 +21,7 @@ const SubmitThemeForm = () => (
           .then((response) => response.json())
           .then((data) => {
             setSubmitting(false);
-            window.location.href = "/Addlog";
+            window.location.href = "/AddLog";
       });
     }}
     >
@@ -36,8 +37,8 @@ const SubmitThemeForm = () => (
         } = props;
         return (
           <form onSubmit={handleSubmit} className="form">
-            <div > Submit A Theme </div>
-            <div>
+            <h1 > Submit A Theme </h1>
+            <h3>
               <label htmlFor="themename">Theme: </label>
               <input
                 required
@@ -50,7 +51,8 @@ const SubmitThemeForm = () => (
                 id="themename"
               />
               <ErrorMessage name="ThemeName" />
-            </div>
+            </h3>
+            <br></br>
             <button type="submit" disabled={isSubmitting}>
               Submit
             </button>
@@ -63,6 +65,7 @@ const SubmitThemeForm = () => (
 function SumbitTheme() {
   return (
     <>
+    <Particles />
     <Nav />
     <SubmitThemeForm />
     </>

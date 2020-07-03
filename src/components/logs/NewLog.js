@@ -1,12 +1,12 @@
 import React from "react";
 import Nav from "../Nav";
-import DailyLogForm from './DailyLogForm';
-
+import DailyLogForm from "./DailyLogForm";
+import Particles from "../Particles";
 
 function AddNewLog() {
-  console.log("add form ran");
   return (
     <>
+      <Particles />
       <Nav />
       <DailyLogForm />
     </>

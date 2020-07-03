@@ -30,6 +30,7 @@ class ImageUpload extends React.Component {
           accept="image/x-png,image/gif,image/jpeg"
         />
         <Link to='/loglist'>Submit Photo</Link>
+        <br></br>
         <Link to='/loglist'>Skip Today's Photo </Link>
       </div>
     );
