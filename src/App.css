@@ -8,11 +8,12 @@ body {
 }
 
 .nav {
-  background-color: gray;
   position: fixed;
+  background-color: gray;
   top: 0;
   width: 100%;
   border-style: solid;
+  z-index: 10;
 }
 
 .nav ul {
@@ -116,7 +117,7 @@ input[type=text]{
 }
 
 .date{
-display: inline;
+  z-index: 1;
 }
 
 

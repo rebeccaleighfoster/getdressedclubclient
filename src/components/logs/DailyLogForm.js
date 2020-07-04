@@ -137,11 +137,12 @@ class Dailylog extends Component {
                 </div>
                 <div>
                   <label htmlFor="date"> Date: </label>
-                 <div className="date">
+                 <div >
                   <DatePicker
                     selected={values.date}
                     dateFormat="MMMM d, yyyy"
                     name="date"
+                    className="date"
                     onChange={(date) => setFieldValue("date", date)}
                   />
                  </div>

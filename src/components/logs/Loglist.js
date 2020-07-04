@@ -44,7 +44,6 @@ class Loglist extends Component {
         return dailylogresponse.json();
       })
       .then((dailylog) => {
-
         console.log(dailylog)
         this.setState({
           dailylog,
