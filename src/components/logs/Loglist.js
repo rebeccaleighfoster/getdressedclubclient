@@ -17,6 +17,7 @@ class Loglist extends Component {
   }
 
   handleLogDelete = (log_id) => {
+    console.log(URL)
     fetch(`${URL}/dailylog/${log_id}`, {
       method: "DELETE",
       headers: {
