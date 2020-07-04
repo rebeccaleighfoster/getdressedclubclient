@@ -38,7 +38,7 @@ class Loglist extends Component {
   fetchLogs = () => {
     fetch(`${URL}/dailylog`)
       .then((dailylogresponse) => {
-        console.log(dailylogresponse)
+       // console.log(dailylogresponse)
         if (!dailylogresponse.ok)
           return dailylogresponse.json().then((e) => Promise.reject(e));
         return dailylogresponse.json();
