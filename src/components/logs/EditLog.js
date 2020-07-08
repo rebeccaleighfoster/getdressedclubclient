@@ -2,6 +2,7 @@ import React from "react";
 import Nav from "../Nav"
 import DailyLogForm from "./DailyLogForm";
 import { URL } from "../../config";
+import Partilces from '../Particles'
 
 class EditLog extends React.Component {
   constructor(props) {

@@ -7,6 +7,11 @@ body {
   background-color: #e2e2e2;
 }
 
+.particles {
+  z-index: -1;
+  position: absolute;
+}
+
 .nav {
   position: fixed;
   background-color: gray;
@@ -58,16 +63,17 @@ button {
   transition: all 0.4s ease 0s;
 }
 
+.logParticles {
+  z-index: -1;
+  position: fixed;
+}
+
 button:hover {
   background-color: #e2e2e2;
 }
 .info {
-  margin: 15px;
   text-align: center;
-  padding: 15px;
   background-color: #808080;
-  width: 50%;
-  padding: 20px;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -77,10 +83,7 @@ button:hover {
 }
 
 .form {
-  margin: 15px;
-  padding: 15px;
   background-color: #808080;
-  width: 75%;
   padding: 20px;
   position: fixed;
   top: 50%;
@@ -89,43 +92,41 @@ button:hover {
   border-style: solid;
   border-radius: 3px;
   text-align: center;
-
 }
 
-input[type=text]{
+input[type="text"] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
 }
 
-#friendname{
+#friendname {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
 }
 
-#glasseswater{
+#glasseswater {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
 }
 
-#fooddrop{
+#fooddrop {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
 }
 
-.date{
+.date {
   z-index: 1;
 }
 
-
-.radiobutton{
+.radiobutton {
   width: 100%;
 }
 
-.buttonquestion{
+.buttonquestion {
   line-height: 25px;
   padding-bottom: 5px;
 }
@@ -170,33 +171,60 @@ input[type=text]{
   border-radius: 5px;
 }
 
-#hamburgerNav{
+#hamburgerNav {
   display: none;
 }
 
-@media only screen and (max-width: 600px) {
-    
-  
-  .nav{
-      display: none;
+@media only screen and (min-width: 600px) {
+  .info {
+    width: 50%;
+    padding: 10px;
+    margin: auto;
   }
+
+  .form {
+    padding: 10px;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .info,
+  .form,
+  .LogForm {
+    width: 70%;
+    margin: auto;
+    padding: 18px;
+  }
+
+  .LogForm  {
+    margin-top: 28px;
+    margin-bottom: 20vw;
+  }
+
+  .logList {
+    margin: 40px auto;
+    width: 70%;
   
-  #hamburgerNav{
+  }
+
+  /*hamburger*/
+  .nav {
+    display: none;
+  }
+
+  #hamburgerNav {
     display: block;
-    position: relative;
+    position: sticky;
     top: 20px;
     left: 20px;
-    
     z-index: 1;
-    
     -webkit-user-select: none;
     user-select: none;
+    margin-top: 10px;
   }
-  
-  
-  
-  #hamburgerNav input
-  {
+
+  #hamburgerNav input {
     display: block;
     width: 40px;
     height: 32px;
@@ -204,83 +232,84 @@ input[type=text]{
     top: -7px;
     left: -5px;
     cursor: pointer;
-    opacity: 0; 
-    z-index: 2; 
+    opacity: 0;
+    z-index: 2;
     -webkit-touch-callout: none;
   }
-  
-  
-  #hamburgerNav span
-  {
+
+  #hamburgerNav span {
     display: block;
     width: 33px;
     height: 4px;
     margin-bottom: 5px;
+    margin-left: 8px;
     position: relative;
     background: black;
     border-radius: 3px;
     z-index: 1;
     transform-origin: 4px 0px;
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                opacity 0.55s ease;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+      background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
   }
-  
-  
-  
-  #hamburgerNav span:first-child
-  {
+
+  #hamburgerNav span:first-child {
     transform-origin: 0% 0%;
   }
-  
-  #hamburgerNav span:nth-last-child(2){
+
+  #hamburgerNav span:nth-last-child(2) {
     transform-origin: 0% 100%;
   }
-  
-  #hamburgerNav input:checked ~ span{
+
+  #hamburgerNav input:checked ~ span {
     opacity: 1;
     transform: rotate(45deg) translate(-2px, -1px);
   }
-  
-  #hamburgerNav input:checked ~ span:nth-last-child(3){
+
+  #hamburgerNav input:checked ~ span:nth-last-child(3) {
     opacity: 0;
     transform: rotate(0deg) scale(0.2, 0.2);
   }
-  
-  #hamburgerNav input:checked ~ span:nth-last-child(2){
+
+  #hamburgerNav input:checked ~ span:nth-last-child(2) {
     transform: rotate(-45deg) translate(0, -1px);
   }
-  
+
   #hamburgerNav input:checked ~ ul {
     display: block;
   }
-  
-  #hamburgerLinks{
+
+  #hamburgerLinks {
     position: absolute;
-    width: 100px;
-    margin: -100px 0 0 -50px;
+    margin: -100px 0 0 -35px;
     padding: 30px;
-    padding-top: 125px;
-    background-color: gray;
+    padding-top: 100px;
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
     transform-origin: 0% 0%;
     transform: translate(-100%, 0);
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
   }
 
-
-  #hamburgerLinks li{
-    padding: 5px 0;
-    font-size: 18px;
+  #hamburgerLinks ul {
+    border-style: solid;
+    border: black;
   }
 
-  #hamburgerLinks li:hover{
-    text-emphasis: bold;
+  #hamburgerLinks li {
+    padding: 4px;
+    margin: 3px;
+    font-size: 14px;
+    border-style: solid;
+    width: 55px;
+    text-align: center;
+    background-color: gray;
   }
-  
-  #hamburgerNav input:checked ~ ul{
+
+  #hamburgerLinks li:hover {
+    background-color: #e2e2e2;
+  }
+
+  #hamburgerNav input:checked ~ ul {
     transform: none;
   }
-  
-  }
+}

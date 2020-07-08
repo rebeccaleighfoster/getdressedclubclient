@@ -7,11 +7,7 @@ function AddNewLog() {
   return (
     <>
       <Nav />
-      
-
       <DailyLogForm />
-      
-      {/* <Particles /> */}
     </>
   );
 }

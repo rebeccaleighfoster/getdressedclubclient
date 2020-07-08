@@ -5,16 +5,16 @@ import Particles from "react-particles-js";
 export default () => (
   <div
     style={{
-      position: "absolute",
+      position: "fixed",
       top: 0,
       left: 0,
-      width: "100%",
-      height: "100%"
+      width: "100vw",
+      height: "100vw"
     }}
   >
 
-<Particles 
-height = '100vh'
+<Particles className="particles"
+height = '100vw'
 params= {{
     particles: {
         number: { value: 9, density: { enable: true, value_area: 800 } },

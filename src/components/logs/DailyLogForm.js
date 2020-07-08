@@ -7,6 +7,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import Nav from "../Nav";
 import { Link } from "react-router-dom";
 import { Component } from "react";
+import Particles from "../Particles";
 
 function addLog(values, setSubmitting) {
   fetch(`${URL}/dailylog`, {
