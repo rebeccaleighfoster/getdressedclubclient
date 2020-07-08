@@ -43,6 +43,7 @@ body {
   border-style: solid;
   border-radius: 3px;
   position: relative;
+  margin: 100px auto auto auto;
 }
 
 .nav a:hover {
@@ -142,7 +143,7 @@ input[type="text"] {
 
 .logListContainer {
   max-width: 1200px;
-  margin: 0;
+  margin: auto;
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -150,7 +151,7 @@ input[type="text"] {
 
 .logList {
   background-color: #808080;
-  margin: 60px 5px 0px 5px;
+  margin: 60px 10px 5px 10px;
   padding: 2vw;
   border-style: solid;
   border-radius: 3px;
