@@ -8,13 +8,13 @@ export default () => (
       position: "fixed",
       top: 0,
       left: 0,
-      width: "100vw",
-      height: "100vw"
+      width: "100%",
+      height: "100%",
     }}
   >
 
 <Particles className="particles"
-height = '100vw'
+height = '100%'
 params= {{
     particles: {
         number: { value: 9, density: { enable: true, value_area: 800 } },

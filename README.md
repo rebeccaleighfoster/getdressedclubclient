@@ -1,68 +1,38 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Get Dressed Club
+https://getdressedclubclient.vercel.app/
 
-## Available Scripts
+## Summary
 
-In the project directory, you can run:
+The Get Dressed Club a self care fullstack CRUD app for friends to take care of themselves and eachother during quarantine. Users can get outfit themes for the day, submit daily logs of their self care routine, and offer or ask for support if they are struggling. 
 
-### `npm start`
+## Motivation
+ 
+The Get Dressed Club is inspired from a text thread that was started during the begininng of the COVID-19 quaratine. It is intended to give users a place to track their own self care habits, get a fun outfit theme for the day, and provide and ask for support. Instead of traditional social media that mainly focuses on the more notable and exciting moments, this app intended to give users a place to focus on their own self care and create community with their close friends. The app is designed to be reminisent of early 2000s internet to give users a nostalgic feel and remind them of when we were kids and did not have such big worries. 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## API Endpoints
+This CRUD app has several endpoints. The get endpoints include one that returns all the daily logs, one that returns an outfit theme for the day. The post end points enable users to create a username, or add a log. The users can also update their log information with a patch endpoint and delete a log with a delete endpoint. 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `npm test`
+## Screenshots
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Landing Page:
+![Landing Page](/src/screenshots/landingpage.png)
+### Create Username Form:
+![New Weaver Form](/src/screenshots/getstarted.png)
+### Check Theme:
+![Project List](/src/screenshots/checktheme.png)
 
-### `npm run build`
+## Languages/Frameworks Utilized
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* [React](https://reactjs.org/)
+* [Javascript](https://www.javascript.com/)
+* [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
+* [Node](https://nodejs.org/en/)
+* [Express](https://expressjs.com/)
+* [PostgreSQL](https://www.postgresql.org/)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Live App
+[Get Dressed Club](https://getdressedclubclient.vercel.app/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Server Repository
+[Get Dressed Club](https://github.com/rebeccaleighfoster/GetDressedClub-API)

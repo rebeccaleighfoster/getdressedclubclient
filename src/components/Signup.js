@@ -1,8 +1,8 @@
 import React from "react";
 import { Formik, ErrorMessage } from "formik";
 import Nav from "./Nav";
- import { URL } from "../config";
-import Particles from './Particles'
+import { URL } from "../config";
+import Particles from "./Particles";
 
 const SignUpForm = () => (
   <div>
@@ -21,7 +21,7 @@ const SignUpForm = () => (
           .then((response) => response.json())
           .then((data) => {
             setSubmitting(false);
-           window.location.href = "/loglist";
+            window.location.href = "/loglist";
           });
       }}
     >
@@ -38,7 +38,7 @@ const SignUpForm = () => (
           <form onSubmit={handleSubmit} className="form">
             <h1> Get Started </h1>
             <h3>
-              <label htmlFor="friendname">Name:  </label>
+              <label htmlFor="friendname">Name: </label>
               <input
                 required
                 value={values.name}
@@ -64,7 +64,7 @@ const SignUpForm = () => (
 function SignUp() {
   return (
     <>
-     <Particles />
+      <Particles />
       <Nav />
       <SignUpForm />
     </>

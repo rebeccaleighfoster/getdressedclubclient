@@ -57,7 +57,7 @@ class GetTheme extends Component {
         ) : null}
 
         <button onClick={() => this.generateTheme()}>
-          {themeOfDay ? "Chose Different Theme" : "Show Today\'s Theme"}
+          {themeOfDay ? "Choose Different Theme" : "Show Today\'s Theme"}
         </button>
         </div>
 </>

@@ -62,6 +62,7 @@ class Loglist extends Component {
     console.log(this.state.dailylog);
     return (
       <>
+       <Particles />
       <Nav />
       <div className= 'logListContainer'>
         {this.state.dailylog.map((log) => (

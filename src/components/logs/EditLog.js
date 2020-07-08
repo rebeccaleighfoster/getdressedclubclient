@@ -2,7 +2,7 @@ import React from "react";
 import Nav from "../Nav"
 import DailyLogForm from "./DailyLogForm";
 import { URL } from "../../config";
-import Partilces from '../Particles'
+import Particles from '../Particles'
 
 class EditLog extends React.Component {
   constructor(props) {
@@ -45,6 +45,7 @@ class EditLog extends React.Component {
     console.log(this.state.log);
     return (
       <>
+      <Particles />
       <Nav />
       <DailyLogForm log={this.state.log} /> 
       </>
