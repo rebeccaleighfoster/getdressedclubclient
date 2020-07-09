@@ -16,7 +16,7 @@ export default class Nav extends React.Component {
               <Link to="/Signup"> Sign Up </Link>
             </li>
             <li>
-              <Link to="/Loglist"> Track Your Friends</Link>
+              <Link to="/Loglist"> Track Your Pals</Link>
             </li>
             <li>
               <Link to="/Submittheme"> Submit an Outfit Theme</Link>
@@ -36,7 +36,7 @@ export default class Nav extends React.Component {
               <Link to="/Signup"> Sign Up </Link>
             </li>
             <li>
-              <Link to="/Loglist"> Track Your Friends</Link>
+              <Link to="/Loglist"> Track Your Pals</Link>
             </li>
             <li>
               <Link to="/Submittheme"> Submit an Outfit Theme</Link>
