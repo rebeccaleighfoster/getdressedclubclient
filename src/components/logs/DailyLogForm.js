@@ -352,7 +352,7 @@ class Dailylog extends Component {
                     </option>
                     <option value=" Reach out to me if you you need someone to drop food off for me.">
                       {" "}
-                      Reach out to me if you you need someone to drop food off
+                      Reach out to me if you need someone to drop food off
                       for you!{" "}
                     </option>
                   </select>
