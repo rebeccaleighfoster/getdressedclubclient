@@ -32,7 +32,7 @@ This CRUD app has several endpoints. The get endpoints include one that returns 
 * [PostgreSQL](https://www.postgresql.org/)
 
 ## Live App
-[Get Dressed Club](https://getdressedclubclient.vercel.app/)
+[Get Dressed Club Live Link](https://getdressedclubclient.vercel.app/)
 
 ## Server Repository
-[Get Dressed Club](https://github.com/rebeccaleighfoster/GetDressedClub-API)
+[Get Dressed Club API](https://github.com/rebeccaleighfoster/GetDressedClub-API)

@@ -1,13 +1,9 @@
 import React from "react";
-import { Formik, ErrorMessage, validateYupSchema } from "formik";
-import * as Yup from "yup";
+import { Formik, ErrorMessage } from "formik";
 import { URL } from "../../config";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import Nav from "../Nav";
-import { Link } from "react-router-dom";
 import { Component } from "react";
-import Particles from "../Particles";
 
 function addLog(values, setSubmitting) {
   fetch(`${URL}/dailylog`, {

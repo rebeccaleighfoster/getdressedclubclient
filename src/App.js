@@ -5,8 +5,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import SubmitTheme from "./components/Submittheme";
 import SignUp from "./components/Signup";
 import ImageUpload from "./components/logs/ImageUpload";
-import { URL } from '../src/config'
-import EditLog from "./components/logs/EditLog"
+import EditLog from "./components/logs/EditLog";
 import AddNewLog from "./components/logs/NewLog";
 import GetTheme from './components/GetTheme'
 
