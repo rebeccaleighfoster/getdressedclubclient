@@ -5,6 +5,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Component } from "react";
 
+//fetch call for adding a log
 function addLog(values, setSubmitting) {
   fetch(`${URL}/dailylog`, {
     method: "POST",
@@ -15,12 +16,12 @@ function addLog(values, setSubmitting) {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log("from add log" , data);
       setSubmitting(false);
       window.location.href = "/loglist";
     });
 }
 
+//fetch call for removing a log
 const editLog = (values, setSubmitting) => {
   const id = values.log_id;
   delete values.log_id;
@@ -47,10 +48,10 @@ class Dailylog extends Component {
     };
   }
 
+  //fetch call for uploading photos after deployed to an upgraded database
   uploadDailyLogImage = (e) => {
-    console.log(e.target.files);
     const formData = new FormData();
-    formData.set("enctype", "multipart/form-data"); // I also tried formData.enctype = 'multipart/form-data'
+    formData.set("enctype", "multipart/form-data"); 
     formData.append("file", e.target.files[0]);
     fetch(`${URL}/dailylog/image/upload`, {
       method: "POST",
@@ -83,6 +84,7 @@ class Dailylog extends Component {
     this.getName();
   }
 
+  //render the daily log form
   render() {
     const nameslist = this.state.names;
     const names = nameslist.map((data) => (
@@ -98,10 +100,8 @@ class Dailylog extends Component {
           onSubmit={(values, { setSubmitting }) => {
             if (values.log_id) {
               editLog(values, setSubmitting);
-              console.log('edit log ran')
             } else {
               addLog(values, setSubmitting);
-              console.log('add log ran')
             }
           }}
         >

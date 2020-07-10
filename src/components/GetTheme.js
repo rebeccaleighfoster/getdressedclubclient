@@ -12,6 +12,7 @@ class GetTheme extends Component {
     };
   }
 
+  //get all themes
   fetchTheme = () => {
     fetch(`${URL}/themes`)
       .then((themeresponse) => {
@@ -33,6 +34,7 @@ class GetTheme extends Component {
     this.fetchTheme();
   }
 
+  //give users a random theme
   generateTheme() {
     const themeOfDay = this.state.themes[
       Math.floor(Math.random() * this.state.themes.length)

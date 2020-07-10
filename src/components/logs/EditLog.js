@@ -12,7 +12,7 @@ class EditLog extends React.Component {
     };
   }
 
-  //get only one log
+  //get only one log to be edited 
   fetchLogsByLog_Id = () => {
     const { log_id } = this.props.match.params;
     fetch(`${URL}/dailylog/${log_id}`) 

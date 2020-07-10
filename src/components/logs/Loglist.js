@@ -17,7 +17,6 @@ class Loglist extends Component {
   }
 
   handleLogDelete = (log_id) => {
-    console.log(URL)
     fetch(`${URL}/dailylog/${log_id}`, {
       method: "DELETE",
       headers: {
@@ -43,7 +42,6 @@ class Loglist extends Component {
         return dailylogresponse.json();
       })
       .then((dailylog) => {
-        console.log(dailylog)
         this.setState({
           dailylog,
         });
@@ -58,7 +56,6 @@ class Loglist extends Component {
   }
 
   render() {
-    console.log(this.state.dailylog);
     return (
       <>
        <Particles />

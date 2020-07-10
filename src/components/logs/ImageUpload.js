@@ -4,9 +4,10 @@ import { URL } from '../../config'
 import Nav from '../Nav'
 import Particles from "../Particles";
   
+
+//code to be used when deployed with an updated database
 class ImageUpload extends React.Component {
   uploadDailyLogImage = (e) => {
-    console.log(e.target.files);
     const formData = new FormData();
     const { log_id } = this.props.match.params;
     formData.set("enctype", "multipart/form-data");

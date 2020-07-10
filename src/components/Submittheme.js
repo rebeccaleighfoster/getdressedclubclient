@@ -33,7 +33,6 @@ const SubmitThemeForm = () => (
           handleChange,
           handleBlur,
           handleSubmit,
-          handleReset,
         } = props;
         return (
           <form onSubmit={handleSubmit} className="form">
