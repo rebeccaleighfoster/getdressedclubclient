@@ -15,10 +15,9 @@ function addLog(values, setSubmitting) {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
+      console.log("from add log" , data);
       setSubmitting(false);
       window.location.href = "/loglist";
-      //window.location.href = `/Addlog/upload/${data.log_id}`;
     });
 }
 
@@ -99,8 +98,10 @@ class Dailylog extends Component {
           onSubmit={(values, { setSubmitting }) => {
             if (values.log_id) {
               editLog(values, setSubmitting);
+              console.log('edit log ran')
             } else {
               addLog(values, setSubmitting);
+              console.log('add log ran')
             }
           }}
         >
