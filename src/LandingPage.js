@@ -11,8 +11,8 @@ export default class LandingPage extends React.Component {
         <div className="info">
           <h1> Get Dressed Club </h1>
           <h2>
-            A self care app for friends to take care of themselves and eachother
-            during quarantine.
+            A self-care app for friends to take care of themselves and each
+            other during quarantine.
           </h2>
           <p>
             An app inspired by a group text friends made during quarantine

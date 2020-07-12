@@ -7,7 +7,7 @@ it("renders without crashing", () => {
   const div = document.createElement("div");
   ReactDOM.render(
     <BrowserRouter>
-      <EditLog />
+     <EditLog match={{ params:{}}}/>
     </BrowserRouter>,
     div
   );

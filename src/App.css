@@ -21,7 +21,7 @@ body {
 
 .nav {
   position: fixed;
-  background-color: gray;
+  background-color: rgb(151, 150, 150);
   top: 0;
   width: 100%;
   border-style: solid;
@@ -36,7 +36,8 @@ body {
 
 .LogForm {
   padding: 15px;
-  background-color: #808080;
+  background-color:  rgb(151, 150, 150);;
+;
   width: 95%;
   padding: 20px;
   top: 50%;
@@ -60,7 +61,8 @@ body {
 }
 
 button {
-  color: #808080;
+  color:  rgb(151, 150, 150);;
+;
   text-transform: uppercase;
   text-decoration: none;
   background: #ffffff;
@@ -75,7 +77,8 @@ button:hover {
 }
 .info {
   text-align: center;
-  background-color: #808080;
+  background-color:  rgb(151, 150, 150);;
+;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -85,7 +88,8 @@ button:hover {
 }
 
 .form {
-  background-color: #808080;
+  background-color:  rgb(151, 150, 150);;
+;
   padding: 20px;
   position: fixed;
   top: 50%;
@@ -150,7 +154,8 @@ input[type="text"] {
 }
 
 .logList {
-  background-color: #808080;
+  background-color:  rgb(151, 150, 150);;
+;
   margin: 60px 10px 5px 10px;
   padding: 2vw;
   border-style: solid;
@@ -160,7 +165,8 @@ input[type="text"] {
 
 
 .landing {
-  background-color: #808080;
+  background-color:  rgb(151, 150, 150);;
+;
   width: 50%;
   padding: 20px;
   position: fixed;
@@ -306,7 +312,7 @@ input[type="text"] {
     border-style: solid;
     width: 58px;
     text-align: center;
-    background-color: gray;
+    background-color: rgb(151, 150, 150);;
   }
 
   #hamburgerLinks li:hover {
